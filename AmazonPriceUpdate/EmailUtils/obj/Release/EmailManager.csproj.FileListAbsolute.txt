@@ -1,0 +1,5 @@
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\EmailUtils\bin\Release\EmailUtils.dll
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\EmailUtils\bin\Release\EmailUtils.pdb
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\EmailUtils\obj\Release\EmailManager.csprojResolveAssemblyReference.cache
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\EmailUtils\obj\Release\EmailUtils.dll
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\EmailUtils\obj\Release\EmailUtils.pdb

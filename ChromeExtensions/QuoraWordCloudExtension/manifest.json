@@ -1,0 +1,32 @@
+﻿{
+    "manifest_version":2,
+
+    "name": "Quora Word Cloud Generator",
+    "description": "Enables generation of word cloud for quora answors",
+    "version": "1.1",
+	"background" : { "scripts": ["scripts/jquery-2.1.3.js","scripts/jquery-ui.js","scripts/jquery.multiselect.js","scripts/js.cookie.js","scripts/generatorEvents.js"] },
+	"permissions": [
+		"tabs",
+		"http://quora.com/*",
+		"https://quora.com/*",
+		"http://www.quora.com/*",
+		"https://www.quora.com/*",
+		"http://medium.com/*",
+		"https://medium.com/*",
+		"http://www.medium.com/*",
+		"https://www.medium.com/*"
+    ],
+
+	"content_scripts":[
+		{
+			"matches":["http://quora.com/*","https://quora.com/*","http://www.quora.com/*","https://www.quora.com/*","http://medium.com/*","https://medium.com/*","http://www.medium.com/*","https://www.medium.com/*"],
+			"js":["scripts/insertButtons.js","scripts/jquery-2.1.3.js","scripts/jquery.magnific-popup.js"],
+			"css":["scripts/magnific-popup.css"]
+		}
+	],
+    "page_action":{
+		"default_popup":"Settings.html",
+		"default_icon":{"19":"images/icon.png","38":"images/icon38.png"},
+		"default_title":"Quora Word Cloud Generator"
+    }
+}

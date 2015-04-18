@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Barebones Price Notification Page</title>
+</head>
+<body>
+    <div id="productUrlForm">
+        <form action="" method="POST" id="productPriceUpdateForm">
+            <label for="productUrl">Product Url:</label>
+            <input type="text" name="productUrl" id="productUrl" /><br />
+            <label for="priceToEmail">Price To Send Update:</label>
+            <input type="number" name="priceToEmail" id="priceToEmail" /><br />
+            <label for="emailId">Email Id:</label>
+            <input type="email" name="emailId" id="emailId" /><br />
+            <label for="duration">Keep this reminder till:</label>
+            <input type="date" name="duration" id="duration" /><br />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+    <div id="productUpdateDetails" class="bordered-image">
+       <div id="updateDetails">This is where results will go</div>
+    </div>
+
+    <script type="text/javascript" src="../../JSFiles/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="../../JSFiles/AmazonPriceUpdateAPIJS/PostRequests.js"></script>
+
+</body>
+</html>

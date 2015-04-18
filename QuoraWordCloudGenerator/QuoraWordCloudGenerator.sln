@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoraWCGeneratorBL", "QuoraWCGeneratorBL\QuoraWCGeneratorBL.csproj", "{736088B8-3880-4468-9B67-169E5578025C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls", "Controls\Controls.csproj", "{34649D7D-04A9-4092-AD0B-F7022C123FD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOtherBananaWebAPI", "..\AmazonPriceUpdate\AmazonPriceUpdateWebAPI\TheOtherBananaWebAPI.csproj", "{88E20792-8F7E-4E88-A469-B326F6E0FA98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils", "..\AmazonPriceUpdate\CommonUtils\CommonUtils.csproj", "{B31AA879-20A7-409B-AAD8-FB981DAB030E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{736088B8-3880-4468-9B67-169E5578025C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{736088B8-3880-4468-9B67-169E5578025C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{736088B8-3880-4468-9B67-169E5578025C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{736088B8-3880-4468-9B67-169E5578025C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34649D7D-04A9-4092-AD0B-F7022C123FD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34649D7D-04A9-4092-AD0B-F7022C123FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34649D7D-04A9-4092-AD0B-F7022C123FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34649D7D-04A9-4092-AD0B-F7022C123FD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88E20792-8F7E-4E88-A469-B326F6E0FA98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E20792-8F7E-4E88-A469-B326F6E0FA98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E20792-8F7E-4E88-A469-B326F6E0FA98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E20792-8F7E-4E88-A469-B326F6E0FA98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31AA879-20A7-409B-AAD8-FB981DAB030E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31AA879-20A7-409B-AAD8-FB981DAB030E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31AA879-20A7-409B-AAD8-FB981DAB030E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31AA879-20A7-409B-AAD8-FB981DAB030E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

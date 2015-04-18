@@ -1,0 +1,9 @@
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\CommonUtils\bin\Release\CommonUtils.dll
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\CommonUtils\bin\Release\CommonUtils.pdb
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\CommonUtils\bin\Release\AWS.TraceListener.dll
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\CommonUtils\bin\Release\AWSSDK.dll
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\CommonUtils\bin\Release\AWS.TraceListener.pdb
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\CommonUtils\bin\Release\AWSSDK.pdb
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\CommonUtils\obj\Release\CommonUtils.csprojResolveAssemblyReference.cache
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\CommonUtils\obj\Release\CommonUtils.dll
+C:\Users\Raghavendran\Documents\Visual Studio 2013\AWSProjects\AmazonPriceUpdate\CommonUtils\obj\Release\CommonUtils.pdb

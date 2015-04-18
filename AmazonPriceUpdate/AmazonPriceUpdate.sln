@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtils", "CommonUtils\CommonUtils.csproj", "{B31AA879-20A7-409B-AAD8-FB981DAB030E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmazonProductAPIWrapper", "AmazonProductAPIWrapper\AmazonProductAPIWrapper.csproj", "{67B21269-EE5A-4E86-846E-2EBE29E47B0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailManager", "EmailUtils\EmailManager.csproj", "{D512A473-7C5E-4E7F-9435-595292E05C03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductUpdateCatalogProvider", "ProductUpdateCatalogProvider\ProductUpdateCatalogProvider.csproj", "{4B8C7057-AA43-40DE-924B-A4515E1CE7C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOtherBananaWebAPI", "AmazonPriceUpdateWebAPI\TheOtherBananaWebAPI.csproj", "{88E20792-8F7E-4E88-A469-B326F6E0FA98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceUpdateWebAPIBL", "PriceUpdateWebAPIBL\PriceUpdateWebAPIBL.csproj", "{4F855C39-A6A6-4689-8590-BDDF464D4760}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricePeriodicTask", "PricePeriodicTask\PricePeriodicTask.csproj", "{42A2BFA6-34F8-4AB8-9B9F-A8AB3BD19286}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B31AA879-20A7-409B-AAD8-FB981DAB030E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31AA879-20A7-409B-AAD8-FB981DAB030E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31AA879-20A7-409B-AAD8-FB981DAB030E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31AA879-20A7-409B-AAD8-FB981DAB030E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67B21269-EE5A-4E86-846E-2EBE29E47B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B21269-EE5A-4E86-846E-2EBE29E47B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B21269-EE5A-4E86-846E-2EBE29E47B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B21269-EE5A-4E86-846E-2EBE29E47B0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D512A473-7C5E-4E7F-9435-595292E05C03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D512A473-7C5E-4E7F-9435-595292E05C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D512A473-7C5E-4E7F-9435-595292E05C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D512A473-7C5E-4E7F-9435-595292E05C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B8C7057-AA43-40DE-924B-A4515E1CE7C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B8C7057-AA43-40DE-924B-A4515E1CE7C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B8C7057-AA43-40DE-924B-A4515E1CE7C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B8C7057-AA43-40DE-924B-A4515E1CE7C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88E20792-8F7E-4E88-A469-B326F6E0FA98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E20792-8F7E-4E88-A469-B326F6E0FA98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E20792-8F7E-4E88-A469-B326F6E0FA98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E20792-8F7E-4E88-A469-B326F6E0FA98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F855C39-A6A6-4689-8590-BDDF464D4760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F855C39-A6A6-4689-8590-BDDF464D4760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F855C39-A6A6-4689-8590-BDDF464D4760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F855C39-A6A6-4689-8590-BDDF464D4760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A2BFA6-34F8-4AB8-9B9F-A8AB3BD19286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A2BFA6-34F8-4AB8-9B9F-A8AB3BD19286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A2BFA6-34F8-4AB8-9B9F-A8AB3BD19286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A2BFA6-34F8-4AB8-9B9F-A8AB3BD19286}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,18 @@
+﻿{
+    "manifest_version":2,
+
+    "name": "Amazon price update extension",
+    "description": "Alpha version",
+    "version": "1.0",
+	"background" : { "scripts": ["scripts/PostRequests.js"] },
+	"permissions": [
+		"activeTab",	
+        "tabs",
+		"http://*/*",
+		"https://*/*"
+    ],
+    "browser_action":{
+		"default_icon":"images/icon.png",
+		"default_popup":"ProductForm.html"
+    }
+}

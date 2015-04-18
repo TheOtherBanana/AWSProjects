@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Barebones Word Cloud generator Page</title>
+    <link rel="stylesheet" type="text/css" href="scripts/jquery.multiselect.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/ui-lightness/jquery-ui.css">
+    <script type="text/javascript" src="scripts/jquery-2.1.3.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="scripts/jquery.multiselect.js"></script>
+    <script type="text/javascript" src="scripts/js.cookie.js"></script>
+    <script type="text/javascript" src="scripts/generatorEvents.js"></script>
+</head>
+
+<body>
+    <div id="productUrlForm">
+
+        <form action="" method="POST" id="generatorForm">
+            <table width="600" border="0" cellspacing="5" cellpadding="1" style="font-family: calibri,arial,helvetica,verdana,sans-serif;
+                   background-color: #ffffff;">
+                <tr>
+                    <td>Background Color</td>
+                    <td>
+                        <select name="backgroundColor " form="generatorForm" id="backColor" style="width: 237px;">
+                            <option value="AliceBlue">AliceBlue</option>
+                            <option value="AliceBlue">AliceBlue</option>
+                            <option value="Aqua">Aqua</option>
+                            <option value="Aquamarine">Aquamarine</option>
+                            <option value="Azure">Azure</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Bisque">Bisque</option>
+                            <option value="Black">Black</option>
+                            <option value="Blue">Blue</option>
+                            <option value="BlueViolet">BlueViolet</option>
+                            <option value="Brown">Brown</option>
+                            <option value="CadetBlue">CadetBlue</option>
+                            <option value="Chartreuse">Chartreuse</option>
+                            <option value="Chocolate">Chocolate</option>
+                            <option value="Coral">Coral</option>
+                            <option value="Crimson">Crimson</option>
+                            <option value="Cyan">Cyan</option>
+                            <option value="DarkBlue">DarkBlue</option>
+                            <option value="DarkCyan">DarkCyan</option>
+                            <option value="DarkGray">DarkGray</option>
+                            <option value="DarkGreen">DarkGreen</option>
+                            <option value="DarkKhaki">DarkKhaki</option>
+                            <option value="DarkMagenta">DarkMagenta</option>
+                            <option value="DarkOliveGreen">DarkOliveGreen</option>
+                            <option value="DarkOrange">DarkOrange</option>
+                            <option value="DarkOrchid">DarkOrchid</option>
+                            <option value="DarkRed">DarkRed</option>
+                            <option value="DarkSalmon">DarkSalmon</option>
+                            <option value="DarkTurquoise">DarkTurquoise</option>
+                            <option value="DarkViolet">DarkViolet</option>
+                            <option value="DeepPink">DeepPink</option>
+                            <option value="DeepSkyBlue">DeepSkyBlue</option>
+                            <option value="ForestGreen">ForestGreen</option>
+                            <option value="Fuchsia">Fuchsia</option>
+                            <option value="Gainsboro">Gainsboro</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Green">Green</option>
+                            <option value="GreenYellow">GreenYellow</option>
+                            <option value="Indigo">Indigo</option>
+                            <option value="Ivory">Ivory</option>
+                            <option value="Khaki">Khaki</option>
+                            <option value="Lavender">Lavender</option>
+                            <option value="LawnGreen">LawnGreen</option>
+                            <option value="LightBlue">LightBlue</option>
+                            <option value="LightCyan">LightCyan</option>
+                            <option value="LightGray">LightGray</option>
+                            <option value="LightGreen">LightGreen</option>
+                            <option value="LightPink">LightPink</option>
+                            <option value="LightSkyBlue">LightSkyBlue</option>
+                            <option value="LightYellow">LightYellow</option>
+                            <option value="Lime">Lime</option>
+                            <option value="LimeGreen">LimeGreen</option>
+                            <option value="Linen">Linen</option>
+                            <option value="Magenta">Magenta</option>
+                            <option value="Maroon">Maroon</option>
+                            <option value="Navy">Navy</option>
+                            <option value="Olive">Olive</option>
+                            <option value="Orange">Orange</option>
+                            <option value="OrangeRed">OrangeRed</option>
+                            <option value="Orchid">Orchid</option>
+                            <option value="PaleGreen">PaleGreen</option>
+                            <option value="PaleTurquoise">PaleTurquoise</option>
+                            <option value="PaleVioletRed">PaleVioletRed</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Red">Red</option>
+                            <option value="SeaGreen">SeaGreen</option>
+                            <option value="Sienna">Sienna</option>
+                            <option value="Silver">Silver</option>
+                            <option value="SkyBlue">SkyBlue</option>
+                            <option value="Snow">Snow</option>
+                            <option value="Tan">Tan</option>
+                            <option value="Teal">Teal</option>
+                            <option value="Thistle">Thistle</option>
+                            <option value="Tomato">Tomato</option>
+                            <option value="Transparent">Transparent</option>
+                            <option value="Turquoise">Turquoise</option>
+                            <option value="Violet">Violet</option>
+                            <option value="Wheat">Wheat</option>
+                            <option value="White">White</option>
+                            <option value="WhiteSmoke">WhiteSmoke</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="YellowGreen">YellowGreen</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Font Colors</td>
+                    <td>
+                        <select multiple name="textColors" form="generatorForm" id="textColors" style="width: 237px;">
+                            <option value="AliceBlue">AliceBlue</option>
+                            <option value="Aqua">Aqua</option>
+                            <option value="Aquamarine">Aquamarine</option>
+                            <option value="Azure">Azure</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Bisque">Bisque</option>
+                            <option value="Black">Black</option>
+                            <option value="Blue">Blue</option>
+                            <option value="BlueViolet">BlueViolet</option>
+                            <option value="Brown">Brown</option>
+                            <option value="CadetBlue">CadetBlue</option>
+                            <option value="Chartreuse">Chartreuse</option>
+                            <option value="Chocolate">Chocolate</option>
+                            <option value="Coral">Coral</option>
+                            <option value="Crimson">Crimson</option>
+                            <option value="Cyan">Cyan</option>
+                            <option value="DarkBlue">DarkBlue</option>
+                            <option value="DarkCyan">DarkCyan</option>
+                            <option value="DarkGray">DarkGray</option>
+                            <option value="DarkGreen">DarkGreen</option>
+                            <option value="DarkKhaki">DarkKhaki</option>
+                            <option value="DarkMagenta">DarkMagenta</option>
+                            <option value="DarkOliveGreen">DarkOliveGreen</option>
+                            <option value="DarkOrange">DarkOrange</option>
+                            <option value="DarkOrchid">DarkOrchid</option>
+                            <option value="DarkRed">DarkRed</option>
+                            <option value="DarkSalmon">DarkSalmon</option>
+                            <option value="DarkTurquoise">DarkTurquoise</option>
+                            <option value="DarkViolet">DarkViolet</option>
+                            <option value="DeepPink">DeepPink</option>
+                            <option value="DeepSkyBlue">DeepSkyBlue</option>
+                            <option value="ForestGreen">ForestGreen</option>
+                            <option value="Fuchsia">Fuchsia</option>
+                            <option value="Gainsboro">Gainsboro</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Green">Green</option>
+                            <option value="GreenYellow">GreenYellow</option>
+                            <option value="Indigo">Indigo</option>
+                            <option value="Ivory">Ivory</option>
+                            <option value="Khaki">Khaki</option>
+                            <option value="Lavender">Lavender</option>
+                            <option value="LawnGreen">LawnGreen</option>
+                            <option value="LightBlue">LightBlue</option>
+                            <option value="LightCyan">LightCyan</option>
+                            <option value="LightGray">LightGray</option>
+                            <option value="LightGreen">LightGreen</option>
+                            <option value="LightPink">LightPink</option>
+                            <option value="LightSkyBlue">LightSkyBlue</option>
+                            <option value="LightYellow">LightYellow</option>
+                            <option value="Lime">Lime</option>
+                            <option value="LimeGreen">LimeGreen</option>
+                            <option value="Linen">Linen</option>
+                            <option value="Magenta">Magenta</option>
+                            <option value="Maroon">Maroon</option>
+                            <option value="Navy">Navy</option>
+                            <option value="Olive">Olive</option>
+                            <option value="Orange">Orange</option>
+                            <option value="OrangeRed">OrangeRed</option>
+                            <option value="Orchid">Orchid</option>
+                            <option value="PaleGreen">PaleGreen</option>
+                            <option value="PaleTurquoise">PaleTurquoise</option>
+                            <option value="PaleVioletRed">PaleVioletRed</option>
+                            <option value="Pink">Pink</option>
+                            <option value="Purple">Purple</option>
+                            <option value="Red">Red</option>
+                            <option value="SeaGreen">SeaGreen</option>
+                            <option value="Sienna">Sienna</option>
+                            <option value="Silver">Silver</option>
+                            <option value="SkyBlue">SkyBlue</option>
+                            <option value="Snow">Snow</option>
+                            <option value="Tan">Tan</option>
+                            <option value="Teal">Teal</option>
+                            <option value="Thistle">Thistle</option>
+                            <option value="Tomato">Tomato</option>
+                            <option value="Transparent">Transparent</option>
+                            <option value="Turquoise">Turquoise</option>
+                            <option value="Violet">Violet</option>
+                            <option value="Wheat">Wheat</option>
+                            <option value="White">White</option>
+                            <option value="WhiteSmoke">WhiteSmoke</option>
+                            <option value="Yellow">Yellow</option>
+                            <option value="YellowGreen">YellowGreen</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Font</td>
+                    <td>
+                        <select name="font" id="font" form="generatorForm" style="width: 237px;">
+                            <option value="Agency FB">Agency FB</option>
+                            <option value="Aharoni">Aharoni</option>
+                            <option value="Aldhabi">Aldhabi</option>
+                            <option value="Algerian">Algerian</option>
+                            <option value="Andalus">Andalus</option>
+                            <option value="Angsana New">Angsana New</option>
+                            <option value="AngsanaUPC">AngsanaUPC</option>
+                            <option value="Aparajita">Aparajita</option>
+                            <option value="AR BERKLEY">AR BERKLEY</option>
+                            <option value="AR BLANCA">AR BLANCA</option>
+                            <option value="AR BONNIE">AR BONNIE</option>
+                            <option value="AR CARTER">AR CARTER</option>
+                            <option value="AR CENA">AR CENA</option>
+                            <option value="AR CHRISTY">AR CHRISTY</option>
+                            <option value="AR DARLING">AR DARLING</option>
+                            <option value="AR DECODE">AR DECODE</option>
+                            <option value="AR DELANEY">AR DELANEY</option>
+                            <option value="AR DESTINE">AR DESTINE</option>
+                            <option value="AR ESSENCE">AR ESSENCE</option>
+                            <option value="AR HERMANN">AR HERMANN</option>
+                            <option value="AR JULIAN">AR JULIAN</option>
+                            <option value="Arabic Typesetting">Arabic Typesetting</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Arial Black">Arial Black</option>
+                            <option value="Arial Narrow">Arial Narrow</option>
+                            <option value="Arial Rounded MT Bold">Arial Rounded MT Bold</option>
+                            <option value="Arial Unicode MS">Arial Unicode MS</option>
+                            <option value="Baskerville Old Face">Baskerville Old Face</option>
+                            <option value="Batang">Batang</option>
+                            <option value="BatangChe">BatangChe</option>
+                            <option value="Bauhaus 93">Bauhaus 93</option>
+                            <option value="Bell MT">Bell MT</option>
+                            <option value="Berlin Sans FB">Berlin Sans FB</option>
+                            <option value="Berlin Sans FB Demi">Berlin Sans FB Demi</option>
+                            <option value="Bernard MT Condensed">Bernard MT Condensed</option>
+                            <option value="Blackadder ITC">Blackadder ITC</option>
+                            <option value="Bodoni MT">Bodoni MT</option>
+                            <option value="Bodoni MT Black">Bodoni MT Black</option>
+                            <option value="Bodoni MT Condensed">Bodoni MT Condensed</option>
+                            <option value="Bodoni MT Poster Compressed">Bodoni MT Poster Compressed</option>
+                            <option value="Book Antiqua">Book Antiqua</option>
+                            <option value="Bookman Old Style">Bookman Old Style</option>
+                            <option value="Bookshelf Symbol 7">Bookshelf Symbol 7</option>
+                            <option value="Bradley Hand ITC">Bradley Hand ITC</option>
+                            <option value="Britannic Bold">Britannic Bold</option>
+                            <option value="Broadway">Broadway</option>
+                            <option value="Browallia New">Browallia New</option>
+                            <option value="BrowalliaUPC">BrowalliaUPC</option>
+                            <option value="Brush Script MT">Brush Script MT</option>
+                            <option value="Buxton Sketch">Buxton Sketch</option>
+                            <option value="Calibri">Calibri</option>
+                            <option value="Calibri Light" selected>Calibri Light</option>
+                            <option value="Californian FB">Californian FB</option>
+                            <option value="Calisto MT">Calisto MT</option>
+                            <option value="Cambria">Cambria</option>
+                            <option value="Cambria Math">Cambria Math</option>
+                            <option value="Candara">Candara</option>
+                            <option value="Castellar">Castellar</option>
+                            <option value="Centaur">Centaur</option>
+                            <option value="Century">Century</option>
+                            <option value="Century Gothic">Century Gothic</option>
+                            <option value="Century Schoolbook">Century Schoolbook</option>
+                            <option value="Chiller">Chiller</option>
+                            <option value="Colonna MT">Colonna MT</option>
+                            <option value="Comic Sans MS">Comic Sans MS</option>
+                            <option value="Consolas">Consolas</option>
+                            <option value="Constantia">Constantia</option>
+                            <option value="Cooper Black">Cooper Black</option>
+                            <option value="Copperplate Gothic Bold">Copperplate Gothic Bold</option>
+                            <option value="Copperplate Gothic Light">Copperplate Gothic Light</option>
+                            <option value="Corbel">Corbel</option>
+                            <option value="Cordia New">Cordia New</option>
+                            <option value="CordiaUPC">CordiaUPC</option>
+                            <option value="Courier New">Courier New</option>
+                            <option value="Curlz MT">Curlz MT</option>
+                            <option value="DaunPenh">DaunPenh</option>
+                            <option value="David">David</option>
+                            <option value="DejaVu Sans">DejaVu Sans</option>
+                            <option value="DejaVu Sans Condensed">DejaVu Sans Condensed</option>
+                            <option value="DejaVu Sans Light">DejaVu Sans Light</option>
+                            <option value="DejaVu Sans Mono">DejaVu Sans Mono</option>
+                            <option value="DejaVu Serif">DejaVu Serif</option>
+                            <option value="DejaVu Serif Condensed">DejaVu Serif Condensed</option>
+                            <option value="DengXian">DengXian</option>
+                            <option value="DFKai-SB">DFKai-SB</option>
+                            <option value="DilleniaUPC">DilleniaUPC</option>
+                            <option value="DokChampa">DokChampa</option>
+                            <option value="Dotum">Dotum</option>
+                            <option value="DotumChe">DotumChe</option>
+                            <option value="Ebrima">Ebrima</option>
+                            <option value="Edwardian Script ITC">Edwardian Script ITC</option>
+                            <option value="Elephant">Elephant</option>
+                            <option value="Engravers MT">Engravers MT</option>
+                            <option value="Eras Bold ITC">Eras Bold ITC</option>
+                            <option value="Eras Demi ITC">Eras Demi ITC</option>
+                            <option value="Eras Light ITC">Eras Light ITC</option>
+                            <option value="Eras Medium ITC">Eras Medium ITC</option>
+                            <option value="Estrangelo Edessa">Estrangelo Edessa</option>
+                            <option value="EucrosiaUPC">EucrosiaUPC</option>
+                            <option value="Euphemia">Euphemia</option>
+                            <option value="FangSong">FangSong</option>
+                            <option value="Felix Titling">Felix Titling</option>
+                            <option value="Footlight MT Light">Footlight MT Light</option>
+                            <option value="Forte">Forte</option>
+                            <option value="Franklin Gothic Book">Franklin Gothic Book</option>
+                            <option value="Franklin Gothic Demi">Franklin Gothic Demi</option>
+                            <option value="Franklin Gothic Demi Cond">Franklin Gothic Demi Cond</option>
+                            <option value="Franklin Gothic Heavy">Franklin Gothic Heavy</option>
+                            <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                            <option value="Franklin Gothic Medium Cond">Franklin Gothic Medium Cond</option>
+                            <option value="FrankRuehl">FrankRuehl</option>
+                            <option value="FreesiaUPC">FreesiaUPC</option>
+                            <option value="Freestyle Script">Freestyle Script</option>
+                            <option value="French Script MT">French Script MT</option>
+                            <option value="Gabriola">Gabriola</option>
+                            <option value="Gadugi">Gadugi</option>
+                            <option value="Garamond">Garamond</option>
+                            <option value="Gautami">Gautami</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Gigi">Gigi</option>
+                            <option value="Gill Sans MT">Gill Sans MT</option>
+                            <option value="Gill Sans MT Condensed">Gill Sans MT Condensed</option>
+                            <option value="Gill Sans MT Ext Condensed Bold">Gill Sans MT Ext Condensed Bold</option>
+                            <option value="Gill Sans Ultra Bold">Gill Sans Ultra Bold</option>
+                            <option value="Gill Sans Ultra Bold Condensed">Gill Sans Ultra Bold Condensed</option>
+                            <option value="Gisha">Gisha</option>
+                            <option value="Gloucester MT Extra Condensed">Gloucester MT Extra Condensed</option>
+                            <option value="Goudy Old Style">Goudy Old Style</option>
+                            <option value="Goudy Stout">Goudy Stout</option>
+                            <option value="Gulim">Gulim</option>
+                            <option value="GulimChe">GulimChe</option>
+                            <option value="Gungsuh">Gungsuh</option>
+                            <option value="GungsuhChe">GungsuhChe</option>
+                            <option value="Haettenschweiler">Haettenschweiler</option>
+                            <option value="Harlow Solid Italic">Harlow Solid Italic</option>
+                            <option value="Harrington">Harrington</option>
+                            <option value="High Tower Text">High Tower Text</option>
+                            <option value="Impact">Impact</option>
+                            <option value="Imprint MT Shadow">Imprint MT Shadow</option>
+                            <option value="Informal Roman">Informal Roman</option>
+                            <option value="IrisUPC">IrisUPC</option>
+                            <option value="Iskoola Pota">Iskoola Pota</option>
+                            <option value="JasmineUPC">JasmineUPC</option>
+                            <option value="Javanese Text">Javanese Text</option>
+                            <option value="Jokerman">Jokerman</option>
+                            <option value="Juice ITC">Juice ITC</option>
+                            <option value="KaiTi">KaiTi</option>
+                            <option value="Kalinga">Kalinga</option>
+                            <option value="Kartika">Kartika</option>
+                            <option value="Khmer UI">Khmer UI</option>
+                            <option value="KodchiangUPC">KodchiangUPC</option>
+                            <option value="Kokila">Kokila</option>
+                            <option value="Kristen ITC">Kristen ITC</option>
+                            <option value="Kunstler Script">Kunstler Script</option>
+                            <option value="Lao UI">Lao UI</option>
+                            <option value="Latha">Latha</option>
+                            <option value="Leelawadee">Leelawadee</option>
+                            <option value="Leelawadee UI">Leelawadee UI</option>
+                            <option value="Leelawadee UI Semilight">Leelawadee UI Semilight</option>
+                            <option value="Levenim MT">Levenim MT</option>
+                            <option value="LilyUPC">LilyUPC</option>
+                            <option value="Lucida Bright">Lucida Bright</option>
+                            <option value="Lucida Calligraphy">Lucida Calligraphy</option>
+                            <option value="Lucida Console">Lucida Console</option>
+                            <option value="Lucida Fax">Lucida Fax</option>
+                            <option value="Lucida Handwriting">Lucida Handwriting</option>
+                            <option value="Lucida Sans">Lucida Sans</option>
+                            <option value="Lucida Sans Typewriter">Lucida Sans Typewriter</option>
+                            <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
+                            <option value="Magneto">Magneto</option>
+                            <option value="Maiandra GD">Maiandra GD</option>
+                            <option value="Malgun Gothic">Malgun Gothic</option>
+                            <option value="Mangal">Mangal</option>
+                            <option value="Marlett">Marlett</option>
+                            <option value="Matura MT Script Capitals">Matura MT Script Capitals</option>
+                            <option value="Meiryo">Meiryo</option>
+                            <option value="Meiryo UI">Meiryo UI</option>
+                            <option value="Microsoft Himalaya">Microsoft Himalaya</option>
+                            <option value="Microsoft JhengHei">Microsoft JhengHei</option>
+                            <option value="Microsoft JhengHei Light">Microsoft JhengHei Light</option>
+                            <option value="Microsoft JhengHei UI">Microsoft JhengHei UI</option>
+                            <option value="Microsoft JhengHei UI Light">Microsoft JhengHei UI Light</option>
+                            <option value="Microsoft MHei">Microsoft MHei</option>
+                            <option value="Microsoft NeoGothic">Microsoft NeoGothic</option>
+                            <option value="Microsoft New Tai Lue">Microsoft New Tai Lue</option>
+                            <option value="Microsoft PhagsPa">Microsoft PhagsPa</option>
+                            <option value="Microsoft Sans Serif">Microsoft Sans Serif</option>
+                            <option value="Microsoft Tai Le">Microsoft Tai Le</option>
+                            <option value="Microsoft Uighur">Microsoft Uighur</option>
+                            <option value="Microsoft YaHei">Microsoft YaHei</option>
+                            <option value="Microsoft YaHei Light">Microsoft YaHei Light</option>
+                            <option value="Microsoft YaHei UI">Microsoft YaHei UI</option>
+                            <option value="Microsoft YaHei UI Light">Microsoft YaHei UI Light</option>
+                            <option value="Microsoft Yi Baiti">Microsoft Yi Baiti</option>
+                            <option value="MingLiU">MingLiU</option>
+                            <option value="MingLiU-ExtB">MingLiU-ExtB</option>
+                            <option value="MingLiU_HKSCS">MingLiU_HKSCS</option>
+                            <option value="MingLiU_HKSCS-ExtB">MingLiU_HKSCS-ExtB</option>
+                            <option value="Miriam">Miriam</option>
+                            <option value="Miriam Fixed">Miriam Fixed</option>
+                            <option value="Mistral">Mistral</option>
+                            <option value="Modern No. 20">Modern No. 20</option>
+                            <option value="Mongolian Baiti">Mongolian Baiti</option>
+                            <option value="Monotype Corsiva">Monotype Corsiva</option>
+                            <option value="MoolBoran">MoolBoran</option>
+                            <option value="MS Gothic">MS Gothic</option>
+                            <option value="MS Mincho">MS Mincho</option>
+                            <option value="MS Outlook">MS Outlook</option>
+                            <option value="MS PGothic">MS PGothic</option>
+                            <option value="MS PMincho">MS PMincho</option>
+                            <option value="MS Reference Sans Serif">MS Reference Sans Serif</option>
+                            <option value="MS Reference Specialty">MS Reference Specialty</option>
+                            <option value="MS UI Gothic">MS UI Gothic</option>
+                            <option value="MT Extra">MT Extra</option>
+                            <option value="MV Boli">MV Boli</option>
+                            <option value="Myanmar Text">Myanmar Text</option>
+                            <option value="Narkisim">Narkisim</option>
+                            <option value="Niagara Engraved">Niagara Engraved</option>
+                            <option value="Niagara Solid">Niagara Solid</option>
+                            <option value="Nirmala UI">Nirmala UI</option>
+                            <option value="Nirmala UI Semilight">Nirmala UI Semilight</option>
+                            <option value="NSimSun">NSimSun</option>
+                            <option value="Nyala">Nyala</option>
+                            <option value="OCR A Extended">OCR A Extended</option>
+                            <option value="Old English Text MT">Old English Text MT</option>
+                            <option value="Onyx">Onyx</option>
+                            <option value="Palace Script MT">Palace Script MT</option>
+                            <option value="Palatino Linotype">Palatino Linotype</option>
+                            <option value="Papyrus">Papyrus</option>
+                            <option value="Parchment">Parchment</option>
+                            <option value="Perpetua">Perpetua</option>
+                            <option value="Perpetua Titling MT">Perpetua Titling MT</option>
+                            <option value="Plantagenet Cherokee">Plantagenet Cherokee</option>
+                            <option value="Playbill">Playbill</option>
+                            <option value="PMingLiU">PMingLiU</option>
+                            <option value="PMingLiU-ExtB">PMingLiU-ExtB</option>
+                            <option value="Poor Richard">Poor Richard</option>
+                            <option value="Pristina">Pristina</option>
+                            <option value="Raavi">Raavi</option>
+                            <option value="Rage Italic">Rage Italic</option>
+                            <option value="Ravie">Ravie</option>
+                            <option value="Rockwell">Rockwell</option>
+                            <option value="Rockwell Condensed">Rockwell Condensed</option>
+                            <option value="Rockwell Extra Bold">Rockwell Extra Bold</option>
+                            <option value="Rod">Rod</option>
+                            <option value="Sakkal Majalla">Sakkal Majalla</option>
+                            <option value="Script MT Bold">Script MT Bold</option>
+                            <option value="Segoe Marker">Segoe Marker</option>
+                            <option value="Segoe Print">Segoe Print</option>
+                            <option value="Segoe Script">Segoe Script</option>
+                            <option value="Segoe UI">Segoe UI</option>
+                            <option value="Segoe UI Black">Segoe UI Black</option>
+                            <option value="Segoe UI Emoji">Segoe UI Emoji</option>
+                            <option value="Segoe UI Light">Segoe UI Light</option>
+                            <option value="Segoe UI Semibold">Segoe UI Semibold</option>
+                            <option value="Segoe UI Semilight">Segoe UI Semilight</option>
+                            <option value="Segoe UI Symbol">Segoe UI Symbol</option>
+                            <option value="Segoe WP">Segoe WP</option>
+                            <option value="Segoe WP Black">Segoe WP Black</option>
+                            <option value="Segoe WP Light">Segoe WP Light</option>
+                            <option value="Segoe WP Semibold">Segoe WP Semibold</option>
+                            <option value="Segoe WP SemiLight">Segoe WP SemiLight</option>
+                            <option value="Shonar Bangla">Shonar Bangla</option>
+                            <option value="Showcard Gothic">Showcard Gothic</option>
+                            <option value="Shruti">Shruti</option>
+                            <option value="SimHei">SimHei</option>
+                            <option value="Simplified Arabic">Simplified Arabic</option>
+                            <option value="Simplified Arabic Fixed">Simplified Arabic Fixed</option>
+                            <option value="SimSun">SimSun</option>
+                            <option value="SimSun-ExtB">SimSun-ExtB</option>
+                            <option value="Sitka Banner">Sitka Banner</option>
+                            <option value="Sitka Display">Sitka Display</option>
+                            <option value="Sitka Heading">Sitka Heading</option>
+                            <option value="Sitka Small">Sitka Small</option>
+                            <option value="Sitka Subheading">Sitka Subheading</option>
+                            <option value="Sitka Text">Sitka Text</option>
+                            <option value="SketchFlow Print">SketchFlow Print</option>
+                            <option value="Snap ITC">Snap ITC</option>
+                            <option value="Stencil">Stencil</option>
+                            <option value="Sylfaen">Sylfaen</option>
+                            <option value="Symbol">Symbol</option>
+                            <option value="Tahoma">Tahoma</option>
+                            <option value="Tempus Sans ITC">Tempus Sans ITC</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Traditional Arabic">Traditional Arabic</option>
+                            <option value="Trebuchet MS">Trebuchet MS</option>
+                            <option value="Tunga">Tunga</option>
+                            <option value="Tw Cen MT">Tw Cen MT</option>
+                            <option value="Tw Cen MT Condensed">Tw Cen MT Condensed</option>
+                            <option value="Tw Cen MT Condensed Extra Bold">Tw Cen MT Condensed Extra Bold</option>
+                            <option value="Urdu Typesetting">Urdu Typesetting</option>
+                            <option value="Utsaah">Utsaah</option>
+                            <option value="Vani">Vani</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Vijaya">Vijaya</option>
+                            <option value="Viner Hand ITC">Viner Hand ITC</option>
+                            <option value="Vivaldi">Vivaldi</option>
+                            <option value="Vladimir Script">Vladimir Script</option>
+                            <option value="Vrinda">Vrinda</option>
+                            <option value="Webdings">Webdings</option>
+                            <option value="Wide Latin">Wide Latin</option>
+                            <option value="Wingdings">Wingdings</option>
+                            <option value="Wingdings 2">Wingdings 2</option>
+                            <option value="Wingdings 3">Wingdings 3</option>
+                            <option value="Yu Gothic">Yu Gothic</option>
+                            <option value="Yu Gothic Light">Yu Gothic Light</option>
+                            <option value="Yu Mincho">Yu Mincho</option>
+                            <option value="Yu Mincho Demibold">Yu Mincho Demibold</option>
+                            <option value="Yu Mincho Light">Yu Mincho Light</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Maximum Font</td>
+                    <td><select id="maxFont" name="maxFontSize" form="generatorForm" class="1-100Max" style="width: 237px;"></select></td>
+                </tr>
+                <tr>
+                    <td>Minimum Font</td>
+                    <td><select id="minFont" name="minFontSize" form="generatorForm" class="1-100Min" style="width: 237px;"></select></td>
+                </tr>
+                <tr>
+                    <td>Image Width</td>
+                    <td><input type="number" name="width" id="width" class="ui-widget ui-state-default ui-corner-al" style="width: 237px;" /></td>
+                </tr>
+                <tr>
+                    <td>Image Height</td>
+                    <td><input type="number" name="height" id="height" class="ui-widget ui-state-default ui-corner-al" style="width: 237px;" /></td>
+                </tr>
+                <tr>
+                    <td>Exclude common words</td>
+                    <td><select id="exclude" name="exclude" form="generatorForm" style="width: 237px;">
+                            <option selected>true</option>
+                            <option>false</option>    
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Exclude words</td>
+                    <td><input type="text" name="custExclude" id="custExclude" class="ui-widget ui-state-default ui-corner-al" style="width: 237px;" /></td>
+                </tr>
+            </table>
+            <br />
+            <input type="submit" value="Save" class="ui-widget ui-state-default ui-corner-al" aria-haspopup="true"  />
+            
+            <br /><br />
+        </form>
+    </div>
+    <div id="imageDetails" class="bordered-image">
+        <div id="wordCloudImage"></div>
+    </div>
+    <div id="helpbox">
+        <b>Help</b>
+        <ol>
+            <li>For answers with (more...) option, click on more to see the 'Get Word Cloud' option.</li>
+            <li>Ensure that your background color and font colors are mutually exclusive.</li>
+            <li>If some words are not appearing try increasing the size of the image.</li>
+            <li>If you want to see a lot more words in the cloud decrease both maximum and minimum font size.</li>
+            <li>If there is a lot of empty space in your word cloud try reducing the size of your image.</li>
+            <li>Exclude common words will exclude words like 'if', 'a', 'an', 'and', etc, and is 'true' by default. If you want them to persist mark it false.</li>
+            <li>Exclude words will allow you to exclude words from the answer of your liking. You can use this to remove any stray HTML tags that might come in the cloud.</li>
+            <li>This tool does not work well if the answer is small or has too many hyperlinks/images :).</li>
+            <li>This version of word cloud generator does not support Quora Posts.</li>
+            <li>If the 'Get Word Cloud' button isn't visible try clicking on the answer text or reload the page. This should fix it</li>
+        </ol>
+    </div>
+</body>
+</html>
